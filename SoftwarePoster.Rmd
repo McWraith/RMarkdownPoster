@@ -15,6 +15,9 @@ primary_colour: "#086788"
 ```{r setup, include=FALSE}
 library(knitr)
 library(reticulate)
+use_condaenv("Path:/to/your/conda/environment", required = TRUE)
+py_run_string("import os as os")
+py_run_string("os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = 'Path:/to/your/anaconda/files/Anaconda3/Library/plugins/platforms'")
 knitr::opts_chunk$set(echo = FALSE)
 knitr::knit_engines$set(python = reticulate::eng_python)
 ```
